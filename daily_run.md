@@ -239,3 +239,14 @@ https://github.com/futurewei-cloud/arktos-perftest/tree/perf-20201014
 - no error “killing connection/stream”
 - no crash in any of master components
 - Logs can be found under GCP project: workload-controller-manager on sonyadev4: /home/sonyali/logs/perf-test/gce-5000/arktos/1014-daily1014-1a0w1e
+
+
+## 10/15/2020 Qian's private build
+### Changes
+https://github.com/futurewei-cloud/arktos-perftest/commits/perf-20201014-qianprivate
+- 10/13 build plus following
+- ETCD grpc proxy
+### Result
+- debug is still in progress
+- etcd grpc proxy doesn't support "cert has non empty CN" https://github.com/etcd-io/etcd/pull/10343, current client cert we are using in etcd client doesn't work for this.
+- Qian is trying to generate different cert to start etcd grpc proxy.
