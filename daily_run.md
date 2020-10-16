@@ -226,3 +226,16 @@ https://github.com/futurewei-cloud/arktos-perftest/tree/perf-20201013
     - apiserver memory usage is still higher than baseline ([this](http://35.188.21.94:9092/graph?g0.range_input=6h&g0.end_input=2020-10-14%2006%3A00&g0.expr=process_resident_memory_bytes&g0.tab=0) vs [Pre-Alkaid](http://35.188.21.94:9091/graph?g0.range_input=12h&g0.end_input=2020-10-13%2018%3A30&g0.expr=process_resident_memory_bytes&g0.tab=0))
         - apiserver is running with "--target-ram-mb=300000"
         - This value is used for kube-apiserver to guess the size of the cluster and to configure the deserialize cache size and watch cache sizes inside the API server based on [this](https://applatix.com/making-kubernetes-production-ready-part-2/)
+
+
+## 10/14/2020
+### Changes
+https://github.com/futurewei-cloud/arktos-perftest/tree/perf-20201014
+- 10/13 build plus following
+- Remove bcast from AggregatedWatcher
+### Result
+- Load testing finished with only timeout error and daemonset-priorityclass-0 creation error ( this is known issue for arktos), totally took 11hrs  
+- Density successed and totally took 7 hrs
+- no error “killing connection/stream”
+- no crash in any of master components
+- Logs can be found under GCP project: workload-controller-manager on sonyadev4: /home/sonyali/logs/perf-test/gce-5000/arktos/1014-daily1014-1a0w1e
