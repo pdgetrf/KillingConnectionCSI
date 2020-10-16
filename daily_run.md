@@ -248,5 +248,5 @@ https://github.com/futurewei-cloud/arktos-perftest/commits/perf-20201014-qianpri
 - ETCD grpc proxy
 ### Result
 - debug is still in progress
-- etcd grpc proxy doesn't support "cert has non empty CN" https://github.com/etcd-io/etcd/pull/10343, current client cert we are using in etcd client doesn't work for this.
+- etcd grpc proxy doesn't support "cert has non empty CN" https://github.com/etcd-io/etcd/pull/10343, current client cert kube-up/kubemark are using has non empty CN.
 - Qian is trying to generate different cert to start etcd grpc proxy.
