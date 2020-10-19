@@ -251,3 +251,15 @@ https://github.com/futurewei-cloud/arktos-perftest/commits/perf-20201014-qianpri
 - debug is still in progress
 - etcd grpc proxy doesn't support "cert has non empty CN" https://github.com/etcd-io/etcd/pull/10343, current client cert kube-up/kubemark are using has non empty CN.
 - Qian is trying to generate different cert to start etcd grpc proxy.
+
+
+
+## 10/18/2020
+### Changes
+https://github.com/futurewei-cloud/arktos-perftest/tree/perf-20201018
+- same as 10/14/2020 build
+### Result
+- Load testing finished with only timeout error and daemonset-priorityclass-0 creation error ( this is known issue for arktos), totally took 11hrs  
+- no error “killing connection/stream”
+- no crash in any of master components
+- Logs can be found under GCP project: workload-controller-manager on sonyadev4: /home/sonyali/logs/perf-test/gce-5000/arktos/1018-daily1018-1a0w1e
