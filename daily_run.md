@@ -272,3 +272,25 @@ https://github.com/futurewei-cloud/arktos-perftest/tree/perf-20201019
 - daily run env/log config
 - Ying Huang's commits
 ### Result
+- Load testing finished with only timeout error and daemonset-priorityclass-0 creation error ( this is known issue for arktos), totally took 11hrs
+- no error “killing connection/stream”
+- no crash in any of master components
+- apiserver cpu and memory usage is a little bit reduced compared with 10/14 daily run.
+```
+1014 run for 99 percentile:
+"99": [
+    {
+      "Name": "apiserver/apiserver",
+      "Cpu": 20.74,
+      "Mem": 41225756672
+    },
+
+1019 run for 99 percentile:
+"99": [
+    {
+      "Name": "apiserver/apiserver",
+      "Cpu": 15.47,
+      "Mem": 38153007104
+    },
+```
+- logs can be found under GCP project: workload-controller-manager on sonyadev4: /home/sonyali/logs/perf-test/gce-5000/arktos/1019-daily1019-1a0w1e
