@@ -238,6 +238,7 @@ https://github.com/futurewei-cloud/arktos-perftest/tree/perf-20201014
 - Density successed and totally took 7 hrs
 - no error “killing connection/stream”
 - no crash in any of master components
+- api server go routine counts greatly reduced (from 8M to around 800K peak time)
 - Logs can be found under GCP project: workload-controller-manager on sonyadev4: /home/sonyali/logs/perf-test/gce-5000/arktos/1014-daily1014-1a0w1e
 - [GCP resources](screenshots/20201014)
 
@@ -293,4 +294,5 @@ https://github.com/futurewei-cloud/arktos-perftest/tree/perf-20201019
       "Mem": 38153007104
     },
 ```
+- api server go routine counts aligned with PreAlkaid (around 600K peak time)
 - logs can be found under GCP project: workload-controller-manager on sonyadev4: /home/sonyali/logs/perf-test/gce-5000/arktos/1019-daily1019-1a0w1e
