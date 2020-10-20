@@ -270,7 +270,7 @@ https://github.com/futurewei-cloud/arktos-perftest/tree/perf-20201018
 https://github.com/futurewei-cloud/arktos-perftest/tree/perf-20201019
 - 10/16 arktos master branch plus
 - daily run env/log config
-- Ying Huang's commits
+- Ying Huang's commits (customized broadcast in aggregated watcher, remove unnecessary AggregatedWatchInterface usage)
 ### Result
 - Load testing finished with only timeout error and daemonset-priorityclass-0 creation error ( this is known issue for arktos), totally took 11hrs
 - no error “killing connection/stream”
