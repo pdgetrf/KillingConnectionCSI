@@ -263,3 +263,12 @@ https://github.com/futurewei-cloud/arktos-perftest/tree/perf-20201018
 - no error “killing connection/stream”
 - no crash in any of master components
 - Logs can be found under GCP project: workload-controller-manager on sonyadev4: /home/sonyali/logs/perf-test/gce-5000/arktos/1018-daily1018-1a0w1e
+
+
+## 10/19/2020
+### Changes
+https://github.com/futurewei-cloud/arktos-perftest/tree/perf-20201019
+- 10/16 arktos master branch plus
+- daily run env/log config
+- Ying Huang's commits
+### Result
