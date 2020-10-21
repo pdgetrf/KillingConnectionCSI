@@ -295,6 +295,7 @@ https://github.com/futurewei-cloud/arktos-perftest/tree/perf-20201019
     },
 ```
 - api server go routine counts aligned with PreAlkaid (around 600K peak time)
+- etcd "took too long" 169,020 (vs. 204,855 on 10/18 - not sampling 10/14 as it continues with density)
 - logs can be found under GCP project: workload-controller-manager on sonyadev4: /home/sonyali/logs/perf-test/gce-5000/arktos/1019-daily1019-1a0w1e
 
 
