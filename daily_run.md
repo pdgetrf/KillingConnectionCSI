@@ -296,3 +296,14 @@ https://github.com/futurewei-cloud/arktos-perftest/tree/perf-20201019
 ```
 - api server go routine counts aligned with PreAlkaid (around 600K peak time)
 - logs can be found under GCP project: workload-controller-manager on sonyadev4: /home/sonyali/logs/perf-test/gce-5000/arktos/1019-daily1019-1a0w1e
+
+
+
+## 10/20/2020
+### Changes
+https://github.com/futurewei-cloud/arktos-perftest/tree/perf-20201020
+- 10/19 build
+- high qps to 2000
+### Result
+- Manually ternimated run after 4 hrs.
+- All logs/data has been collected and saved under GCP project: workload-controller-manager on sonyadev4: /home/sonyali/logs/perf-test/gce-5000/arktos/1020-qps1020-1a0w1e
