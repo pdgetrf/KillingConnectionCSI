@@ -319,3 +319,7 @@ https://github.com/futurewei-cloud/arktos-perftest/tree/perf-20201020-qianprivat
 - etcd grpc proxy
 - Added more logs for terminated watchers
 ### Result
+- Load testing finished with only timeout error and daemonset-priorityclass-0 creation error ( this is known issue for arktos), totally took 11hrs
+- No error “killing connection/stream”
+- No crash in any of master components
+- Logs can be found under GCP project: workload-controller-manager on sonya-uswest2: /home/sonyali/logs/perf-test/gce-5000/arktos/1020-qianprivate-1a0w1e
