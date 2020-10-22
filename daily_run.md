@@ -323,3 +323,11 @@ https://github.com/futurewei-cloud/arktos-perftest/tree/perf-20201020-qianprivat
 - No error “killing connection/stream”
 - No crash in any of master components
 - Logs can be found under GCP project: workload-controller-manager on sonya-uswest2: /home/sonyali/logs/perf-test/gce-5000/arktos/1020-qianprivate-1a0w1e
+
+
+## 10/21/2020 
+### Changes
+https://github.com/futurewei-cloud/arktos-perftest/tree/perf-20201021
+- 10/19 build plus
+- Change fieldSelector value in APIServerConfigManager …
+### Result
