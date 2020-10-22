@@ -331,3 +331,31 @@ https://github.com/futurewei-cloud/arktos-perftest/tree/perf-20201021
 - 10/19 build plus
 - Change fieldSelector value in APIServerConfigManager …
 ### Result
+- Load testing finished with only timeout error and daemonset-priorityclass-0 creation error ( this is known issue for arktos), totally took 11hrs
+- no error “killing connection/stream”
+- no crash in any of master components
+- apiserver cpu usage is a little bit increase compared with 10/19 daily run.  And almost same as 10/14 daily run
+```
+1014 run for 99 percentile: 
+"99": [
+    {
+      "Name": "apiserver/apiserver",
+      "Cpu": 20.74,
+      "Mem": 41225756672
+    },
+1019 run for 99 percentile:
+"99": [
+    {
+      "Name": "apiserver/apiserver",
+      "Cpu": 15.47,
+      "Mem": 38153007104
+    },
+1021 run for 99 percentile:
+"99": [
+    {
+      "Name": "apiserver/apiserver",
+      "Cpu": 20.3,
+      "Mem": 38845915136
+    },
+```
+- logs can be found under GCP project: workload-controller-manager on sonyadev4: /home/sonyali/logs/perf-test/gce-5000/arktos/1021-daily1021-1a0w1e
