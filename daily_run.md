@@ -359,3 +359,11 @@ https://github.com/futurewei-cloud/arktos-perftest/tree/perf-20201021
     },
 ```
 - logs can be found under GCP project: workload-controller-manager on sonyadev4: /home/sonyali/logs/perf-test/gce-5000/arktos/1021-daily1021-1a0w1e
+
+
+## 10/22/2020 10K
+### Changes
+https://github.com/futurewei-cloud/arktos-perftest/tree/perf-20201022
+- 10/21 build plus
+- add prometheus and pprof to ppartition server
+### Result
