@@ -367,3 +367,37 @@ https://github.com/futurewei-cloud/arktos-perftest/tree/perf-20201022
 - 10/21 build plus
 - add prometheus and pprof to ppartition server
 ### Result
+- Apiserver and etcd crashed after 7 hrs
+- Master Apiserver has bunch of “killing connection/stream” panic and first panic happened at 09:12:37
+- Api1/api2 has bunch of “killing connection/stream” panic and first panic happened at 09:02:35
+- ETCD crashed and restarted at 09:11:46, didn’t find crashed reason from log
+- Perft-test tools had the first connection refused error at 09:02:25
+- Perf-test tool also stopped with a panic error at 13:22:46
+```
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal SIGSEGV: segmentation violation code=0x1 addr=0x10 pc=0x14620d4]
+
+goroutine 1782552 [running]:
+k8s.io/kubernetes/perf-tests/clusterloader2/pkg/measurement/util/runtimeobjects.GetNumObjectsMatchingSelector.func1(0xc4e792bec0, 0x15)
+        /home/sonyali/go/src/k8s.io/arktos/perf-tests/clusterloader2/pkg/measurement/util/runtimeobjects/runtimeobjects.go:397 +0x1d4
+k8s.io/kubernetes/perf-tests/clusterloader2/pkg/framework/client.RetryFunction.func1(0x1750d60, 0xc41264fb01, 0x0)
+        /home/sonyali/go/src/k8s.io/arktos/perf-tests/clusterloader2/pkg/framework/client/objects.go:128 +0x32
+k8s.io/apimachinery/pkg/util/wait.ExponentialBackoff(0x5f5e100, 0x4008000000000000, 0x0, 0x6, 0x0, 0xc023f06500, 0x1385ef5, 0xc0024bdd40)
+        /home/sonyali/go/src/k8s.io/arktos/staging/src/k8s.io/apimachinery/pkg/util/wait/wait.go:284 +0x51
+k8s.io/kubernetes/perf-tests/clusterloader2/pkg/framework/client.RetryWithExponentialBackOff(...)
+        /home/sonyali/go/src/k8s.io/arktos/perf-tests/clusterloader2/pkg/framework/client/objects.go:59
+k8s.io/kubernetes/perf-tests/clusterloader2/pkg/measurement/util/runtimeobjects.GetNumObjectsMatchingSelector(0x1a9ae40, 0xc002046460, 0xc3b9a7b850, 0xd, 0x0, 0x0, 0xc4f0fc6030, 0x2, 0xc4e792bf00, 0x16, ...)
+        /home/sonyali/go/src/k8s.io/arktos/perf-tests/clusterloader2/pkg/measurement/util/runtimeobjects/runtimeobjects.go:400 +0x148
+k8s.io/kubernetes/perf-tests/clusterloader2/pkg/test.getReplicaCountOfNewObject(0x1af71e0, 0xc005ccbe00, 0xc3b9a7b850, 0xd, 0xc005df4c00, 0xc4e792bd20, 0x15, 0x0)
+        /home/sonyali/go/src/k8s.io/arktos/perf-tests/clusterloader2/pkg/test/simple_test_executor.go:403 +0x276
+k8s.io/kubernetes/perf-tests/clusterloader2/pkg/test.(*simpleTestExecutor).ExecutePhase(0x28c7e50, 0x1af71e0, 0xc005ccbe00, 0xc002a88df8, 0x0)
+        /home/sonyali/go/src/k8s.io/arktos/perf-tests/clusterloader2/pkg/test/simple_test_executor.go:196 +0x73a
+k8s.io/kubernetes/perf-tests/clusterloader2/pkg/test.(*simpleTestExecutor).ExecuteStep.func2()
+        /home/sonyali/go/src/k8s.io/arktos/perf-tests/clusterloader2/pkg/test/simple_test_executor.go:154 +0x4e
+k8s.io/apimachinery/pkg/util/wait.(*Group).Start.func1(0xc24d275e90, 0xc2b4caa300)
+        /home/sonyali/go/src/k8s.io/arktos/staging/src/k8s.io/apimachinery/pkg/util/wait/wait.go:71 +0x4f
+created by k8s.io/apimachinery/pkg/util/wait.(*Group).Start
+        /home/sonyali/go/src/k8s.io/arktos/staging/src/k8s.io/apimachinery/pkg/util/wait/wait.go:69 +0x62
+```
+- Logs can be found under GCP project: workload-controller-manager on sonya-uswest2: /home/sonyali/logs/perf-test/gce-10000/arktos/1022-daily-10k-3a0w1e
+
